@@ -1,5 +1,4 @@
-# Ionic login validate
-## Repo detail:
+## Ionic login validate:
 
 | package | version |
 | ------ | ------ |
