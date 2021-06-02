@@ -1,0 +1,65 @@
+<ion-content class="login-container">
+  <ion-grid>
+  <ion-row class="ion-justify-content-center">
+    <ion-col class="ion-align-self-center">
+
+      <div class="container-image logo-movil">
+        <ion-img class="logo" src="../assets/logo.jpg" ></ion-img>
+      </div>
+      <ion-card class="card-form" [@errorValidate]="checkErr" (@errorValidate.done)="checkErr = false">
+
+        <ion-card-header class="logo-desktop">
+          <div class="container-image">
+            <ion-img class="logo" src="../assets/logo.jpg" ></ion-img>
+          </div>
+          <p class="ion-text-center">Prueba técnica</p>
+        </ion-card-header>
+
+          <ion-card-content class="ion-no-padding">
+    
+            <form novalidate [formGroup]="loginForm" class="ion-no-padding" (ngSubmit)="save(loginForm)">
+      
+              <ion-item class="ion-margin-horizontal">
+                <ion-input formControlName="email" autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true" (click)="onInputClear(loginForm.controls.email)"
+                color="primary" inputmode="text" placeholder="Email"></ion-input>
+                <ion-icon size="small" name="person-outline" color="primary" slot="start"></ion-icon>
+                <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validationMessages.email">
+                    <div class="error-message" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+              </ion-item>
+      
+              <ion-item class="ion-margin-horizontal">
+                <ion-input formControlName="password" autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true" (click)="onInputClear(loginForm.controls.password)"
+                color="primary" inputmode="text" type="password" placeholder="Contraseña"></ion-input>
+                <ion-icon size="small" name="lock-closed-outline" color="primary" slot="start"></ion-icon>
+                <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validationMessages.password">
+                    <div class="error-message" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+              </ion-item>
+      
+              <ion-item class="ion-margin-horizontal" lines="none">
+                <ion-label class="ion-no-padding" floating>Recordar</ion-label>
+                <ion-toggle formControlName="reminder" color="primary"></ion-toggle>
+              </ion-item>
+
+              <ion-button type="submit" class="btn-access-movil ion-text-capitalize" expand="full" color="primary">Acceder</ion-button>
+              <ion-button type="submit" class="btn-access-desktop ion-text-capitalize" expand="full" shape="round" fill="outline">Acceder</ion-button>
+      
+            </form>
+
+          </ion-card-content>
+        </ion-card>
+      
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

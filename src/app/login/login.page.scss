@@ -1,0 +1,67 @@
+:host{
+    --ion-background-color: none;
+
+    ion-item {
+        --padding-start: 0;
+        --padding-end: 0px;
+        --inner-padding-end: 0px;
+      }
+      ion-input{
+        --placeholder-color: #969696 !important;
+      }
+      ion-icon {
+        margin-inline-end: 15px !important;
+        --ion-color-base:#c7c7c7 !important;
+      }
+      ion-toggle {
+        --background: #d7d7da;
+        --handle-background: #b1b1b5;
+        padding: 12px 0 !important;
+      }
+
+   .login-container{ 
+        background: url('../../assets/background.jpg') no-repeat top left #021133;
+
+        .container-image{
+            width: 110px; 
+            height: 110px; 
+            overflow: hidden;
+            margin: 30px auto 0;
+        }
+        .logo{ 
+            width:180px; 
+            height: 110px; 
+        }
+
+        .logo-desktop p {color: #000; font-weight: 600; padding-top: 20px;}
+    
+        .card-form{ 
+            border-radius: 0;
+            background-color: #FFF; 
+            max-width: 350px;  
+            margin: 40px auto 0;
+            
+            .validation-errors{ 
+                .error-message{ position: absolute; font-weight: 100; font-size: 10px; color: red;width: 100%; right: 0; text-align: right; margin-top: 7px;}
+            }
+
+            .btn-access-desktop{width: 130px; margin:20px auto; color: #000; font-weight: 600;}
+            .btn-access-movil{ height:45px; margin: 0;}
+        }
+
+    }
+
+    @media (max-width: 960px) {
+        .btn-access-desktop, .logo-desktop {
+            display: none;
+        }
+    }
+ 
+    @media (min-width: 960px) {
+        ion-row{ height:80vh }
+        .btn-access-movil, .logo-movil {
+            display: none;
+        }
+    }
+
+}

@@ -1,0 +1,7 @@
+{
+  "name": "login-validate",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
